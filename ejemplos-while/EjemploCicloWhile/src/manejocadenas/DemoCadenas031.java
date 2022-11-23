@@ -9,22 +9,22 @@ package manejocadenas;
  *
  * @author reroes
  */
-public class DemoCadenas03 {
+public class DemoCadenas031 {
 
     public static void main(String[] args) {
-        String pais = "Ecuador";
-        String ciudad = "Loja";
-        String fechaIndependencia = "18 de noviembre";
+        String nombre = "Dara";
+        String apellido = "Van Gijsel";
+        int edad = 21;
         String cadenaAcumuladora = "Datos Personales\n";
         
         //String.fotmat se usa para acumular cadenas//
         
-        cadenaAcumuladora = String.format("%s%s\n", cadenaAcumuladora, pais);
+        cadenaAcumuladora = String.format("%s%s\n", cadenaAcumuladora, nombre);
 
-        cadenaAcumuladora = String.format("%s%s\n", cadenaAcumuladora, ciudad);
+        cadenaAcumuladora = String.format("%s%s\n", cadenaAcumuladora, apellido);
 
-        cadenaAcumuladora = String.format("%s%s\n", cadenaAcumuladora,
-                fechaIndependencia);
+        cadenaAcumuladora = String.format("%s%d\n", cadenaAcumuladora,
+                edad);
 
         System.out.printf("%s", cadenaAcumuladora);
 

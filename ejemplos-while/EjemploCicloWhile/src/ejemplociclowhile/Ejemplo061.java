@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author reroes
  */
-public class Ejemplo08 {
+public class Ejemplo061 {
 
     /**
      * @param args the command line arguments
@@ -23,30 +23,32 @@ public class Ejemplo08 {
         Scanner entrada = new Scanner(System.in);
         entrada.useLocale(Locale.US);
 
-        int contador = 0;
         double suma_total = 0;
-        double promedio_final;
         double calificacion;
         boolean bandera = true;
 
         System.out.println("Ingrese las notas de los estudiantes de su materia");
+        // true 
         while (bandera == true) {
-            System.out.println("Ingrese calificación:");
+            System.out.println("In21grese calificación");
             calificacion = entrada.nextDouble();
-            suma_total = suma_total + calificacion;
-            contador = contador + 1;
 
-            entrada.nextLine(); // Ojo usamos el limpiador del scanner (buffer)
+            if (calificacion > 20) {
+                calificacion = 20; /*para controlar que el usuario no haga trampa
+                                     cada nota tiene un tope de valor en 20*/
+            }
+            suma_total = suma_total + calificacion;
 
             // proceso para salir del ciclo.
-            System.out.println("Ingrese si para salir");
-            String temporal = entrada.nextLine(); //Se crea la variable temporal
-            if (temporal.equals("si")) {
+            System.out.println("Ingrese el valor -1 para salir del ciclo");
+            int temporal = entrada.nextInt();
+
+            if (temporal == -1) {
                 bandera = false;
             }
         }
-        promedio_final = suma_total / contador;
-        System.out.printf("El promedio final es %.2f\n", promedio_final);
+
+        System.out.printf("Suma de calificaciones es %.2f\n", suma_total);
 
     }
 }
